@@ -1,0 +1,8 @@
+1. right click to paste
+	a. create '~/.vimrc' file
+	
+	b. add code
+		------
+		if has('mouse') 
+			set mouse-=a endif 
+		------
