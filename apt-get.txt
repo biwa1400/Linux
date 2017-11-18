@@ -1,0 +1,10 @@
+1. update software source list
+	sudo apt-get update
+2. update system
+	sudo apt-get dist-upgrade
+3. update installs packets
+	sudo apt-get upgrade    
+4. remove packets and dependent packets
+	sudo agt-get remove <packets>
+
+	
