@@ -1,0 +1,20 @@
+1. install usb-modeswitch
+	sudo apt-get install usb-modeswitch
+	
+2. unpack configPack.tar.gz
+	tar zxvf configPack.tar.gz
+	
+3. switch usb mode to cdc mode
+	usb_modeswitch -v 12d1 -p 1f01 -c /usr/share/usb_modeswitch/12d1\:1f01
+
+4. up eth1 device
+	ifconfig eth1 up
+
+5. get DHCP ip
+	udhcpc -BFs -i eth1
+
+<---- debug mode ---->
+1. create file sw_debug_mode.xml
+
+2. post file to http://192.168.8.1/CGI
+	curl -X POST -d @sw_debug_mode.xml http://192.168.8.1/CGI

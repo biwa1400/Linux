@@ -1,0 +1,5 @@
+1. lsusb --- find usb device
+2. dmesg --- see device output
+3. tar zxvf FileName.tar.gz --- unzip
+4. ifconfig eth1 up --- up network device
+5. minicom --device /dev/ttyUSB0 --- open minicom
