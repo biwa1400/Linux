@@ -1,0 +1,6 @@
+1. get current timeStamp
+	date +%s
+2. convert time stamp to time
+	date -d "@1279592730" 
+3. convert special time to time stamp
+	date -d "2010-07-20 10:25:30" +%s

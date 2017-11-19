@@ -1,0 +1,20 @@
+1. three files to save user information
+	/etc/passwd; /etc/shadow; /etc/group
+2. permission
+	 chmod u+rwx,g-rx,o=r,a
+3. about /etc/passwd file
+	username/password/UID/GID/information/mainPath/shell
+4. about /etc/shadow
+	username/password/haveChangedDays/invalidChangedays/overTimeDays/overTimeWarningDays/overTimeExtendDays/disableDays
+5. add user
+	useradd [-u UID] [-g INIT_GROUP] [-G SUB_GROUP] [-c INFORMATION] [-d HOME_PATH] [-s SHELL] [-mM] [-r] [-e DAYS] [-f DAYS] username
+	-mM create/not create Home folder
+	-r system account
+	-e end days
+	-f entend days
+6. delete user
+	userdel [-r] username
+	-r delete home folder (--remove-all-files)
+	
+	
+	

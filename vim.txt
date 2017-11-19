@@ -4,5 +4,15 @@
 	b. add code
 		------
 		if has('mouse') 
-			set mouse-=a endif 
+			set mouse-=a
+		endif 
 		------
+	c. show lines number
+		------
+		set nu!
+		------
+	d. colorful grammar
+		------
+		syntax on
+		------
+		

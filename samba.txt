@@ -1,19 +1,18 @@
 1. install samba
-2. create a share folder and change mode to 777
-	mkdir share
-    chmod 777 share
-3. edit config file '/etc/samba/smb.conf'
+2. create user
+	smbpasswd -a USER_NAME
+3. create a share folder 
+4. edit config file '/etc/samba/smb.conf'
 	vim /etc/samba/smb.conf
 	-----
-		[PiShare]
-		 comment=Raspberry Pi Share
-		 path=/home/pi/share
-		 browseable=Yes
-		 writeable=Yes
-		 only guest=no
-		 create mask=0777
-		 directory mask=0777
-		 public=no
+	254 [BIWA1400]
+	255 comment = biwa1400
+	256 path = /home/biwa1400/share
+	257 browseable = yes
+	258 read only = no
+	259 writable = yes
+	260 public = no
+	261 valid users = biwa1400
 	-----
 4. restart samba server
 	 /etc/init.d/samba retsart
