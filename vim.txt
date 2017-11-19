@@ -15,4 +15,6 @@
 		------
 		syntax on
 		------
+2. convert Dos formt file to  unix
+	set fileformat=unix
 		

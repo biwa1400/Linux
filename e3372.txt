@@ -18,3 +18,9 @@
 
 2. post file to http://192.168.8.1/CGI
 	curl -X POST -d @sw_debug_mode.xml http://192.168.8.1/CGI
+
+3. minicom
+	minicom --device /dev/ttyUSB0
+	
+<---- AT COMMAND ---->
+1. AT^CURC=0 Disable Presentation of Unsolicited Results
