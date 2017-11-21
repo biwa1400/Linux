@@ -1,0 +1,7 @@
+1. install package
+	a. install python pip
+		sudo apt-get install python-pip     //python2
+		sudo apt-get install python3-pip    //python3
+	b. install package
+		pip install pyserial    //python2
+		pip3 install pyserial   //python3

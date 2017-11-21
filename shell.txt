@@ -1,0 +1,29 @@
+1. is last command successful?
+	echo $?
+	
+2. command alias
+	alias lm = 'ls -al'
+	
+3. type query bash commmand
+	type/which
+	
+4.echo ${a}
+
+5. a=${a}...
+
+6. first run...
+	$();``
+	
+6. kernel version
+	unamr-r
+	
+7. random number
+	echo $RANDOM
+	declare -i number=$RANDOM*10/32768
+	echo $number
+
+9. check environment var
+	set; env; export
+
+10 setting environment var
+	export; declare

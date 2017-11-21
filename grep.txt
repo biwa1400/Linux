@@ -1,0 +1,17 @@
+1. dmesg | grep 'scsi' -n --color=auto
+	-n  list the number of line
+	--color=auto
+2. grep -ivn 'the' regular_express.txt
+	-i ingorn An
+	-v invert select 
+3. grep - n ' t[ae] st' regular_express. txt
+	[] means just one in the '[]
+4. grep - n ' [a-zA-Z0-9] ' regular_express. txt
+5. grep - n ' [^[: lower: ] ] oo' regular_express. txt
+	[^] means invert
+6. grep - n ' ^[[: lower: ] ] ' regular_express. txt
+	^ means top of the line
+7. grep -n 'go\{2,5\}g' regular_express.txt
+
+<---- sed ---->
+1. ls /dev/ttyUSB* | sed 's/.*USB//g'

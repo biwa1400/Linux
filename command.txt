@@ -3,3 +3,4 @@
 3. tar zxvf FileName.tar.gz --- unzip
 4. ifconfig eth1 up --- up network device
 5. minicom --device /dev/ttyUSB0 --- open minicom
+6. wget --- download file

@@ -23,4 +23,48 @@
 	minicom --device /dev/ttyUSB0
 	
 <---- AT COMMAND ---->
-1. AT^CURC=0 Disable Presentation of Unsolicited Results
+1. AT^CURC=0 ---- Disable Presentation of Unsolicited Results
+2. ATZ0 ---- Restore Factory Settings
+3. Select Operator
+	AT+COPS?  <mode>[,<format>,<oper>[,<AcT>]]
+	<mode>:
+		0 Automatic (<oper> field is ignored).
+		1 Manual (<oper> field shall be present, and <AcT> optionally).
+		2 Deregister from network. (not supported currently)
+		3 Set only <format> 
+		4 Manual/automatic (<oper> field shall be present); 
+	<format>:
+		0 Long format alphanumeric <oper>
+		1 Short format alphanumeric <oper>
+		2 Numeric <oper>
+	<oper>: string type.
+	<AcT>: indicates access technology selected.
+		0 GSM
+		1 GSM Compact (not supported currently)
+		2 UTRAN
+		3 GSM w/EGPRS (not supported currently)
+		4 UTRAN w/HSDPA (not supported currently)
+		5 UTRAN w/HSUPA (not supported currently)
+		6 UTRAN w/HSDPA and HSUPA (not supported currently)
+		7 E-UTRAN
+	
+
+<---- QUESTION ---->
+1. CGSM DS ES
+2. IMSI：International Mobile Subscriber Identification Number
+ [list of supported (
+	 <stat>,
+	 long alphanumeric <oper>,
+	 shortalphanumeric <oper>,
+	 numeric <oper>,
+	 [<AcT>]
+ ]
+ [,
+  ,
+  (list of supported <mode>s),
+  (list of supported <format>s)
+ ]
+  
+  (1,"TELIA S","TELIA","24001",2),
+  (2,"TELIA S","TELIA","24001",7),
+  (1,"TELI)

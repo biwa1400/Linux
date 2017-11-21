@@ -1,0 +1,3 @@
+udevadm info /dev/ttyUSB1
+
+"username": "YZe1FbwSYm6Pd7oSkPQFBh5OQAHWm2Kj5cbB69U8"
