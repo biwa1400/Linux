@@ -1,0 +1,6 @@
+1. tar.xz
+	$xz -d ***.tar.xz
+	$tar -xvf  ***.tar
+
+2. tar.gz
+	tar zxvf FileName.tar.gz

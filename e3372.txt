@@ -1,3 +1,6 @@
+https://opencellid.org/#register
+OpenCelliD API is: "9732db58d53378" 
+
 1. install usb-modeswitch
 	sudo apt-get install usb-modeswitch
 	
@@ -25,8 +28,26 @@
 <---- AT COMMAND ---->
 1. AT^CURC=0 ---- Disable Presentation of Unsolicited Results
 2. ATZ0 ---- Restore Factory Settings
+
+
 3. Select Operator
-	AT+COPS?  <mode>[,<format>,<oper>[,<AcT>]]
+	AT+COPS?  <mode>
+			  [,<format>,
+			  <oper>
+			  [,<AcT>]]
+			  
+	AT+COPS=? COPS: [list of supported (<stat>,
+									long alphanumeric <oper>,
+									short alphanumeric <oper>,
+									numeric <oper>
+									[,<AcT>])s]
+									[,,(list of supported <mode>s),
+									(list ofsupported <format>s)]
+	<stat>:
+		0 Unknown
+		1 Available
+		2 Current
+		3 Forbidden
 	<mode>:
 		0 Automatic (<oper> field is ignored).
 		1 Manual (<oper> field shall be present, and <AcT> optionally).
@@ -47,6 +68,97 @@
 		5 UTRAN w/HSUPA (not supported currently)
 		6 UTRAN w/HSDPA and HSUPA (not supported currently)
 		7 E-UTRAN
+
+4. AT+CREG? CREG:
+			<n>,
+			<stat>
+			[,<lac>,
+			<ci>
+			[,<AcT>]]
+		
+		<n>:
+		0 Disable network registration unsolicited result code +CREG. (default value)
+		1 Enable network registration unsolicited result code +CREG: <stat>.
+		2 Enable network registration and location information unsolicited result code
+
+		<stat>:
+		0 Not registered, MS is not currently searching for a new operator to registerwith.
+		1 Registered, home network.
+		2 Not registered, but MS is currently searching for a new operator to registerwith.
+		3 Registration denied.
+		4 Unknown.
+		5 Registered, roaming.
+		
+		<lac>: a string type value that indicates two byte location area code or tracking area code in hexadecimal format (e.g. "00C3" equals 195 in decimal).
+		<ci>: a string type value that indicates four byte serving cell ID in hexadecimal format.
+		
+		<AcT>:
+		0 GSM
+		1 GSM Compact
+		2 UTRAN
+		3 GSM w/EGPRS[1]
+		4 UTRAN w/HSDPA[2]
+		5 UTRAN w/HSUPA[2]
+		6 UTRAN w/HSDPA and HSUPA[2]
+		7 E-UTRAN
+		
+5. AT+CGEQREQ? CGEQREQ: <cid>,
+					  <Traffic class>,
+					  <Maximum bitrate UL>,
+					  <Maximum bitrate DL>,
+					  <Guaranteed bitrate UL>,
+					  <Guaranteed bitrate DL>,
+					  <Delivery order>,
+					  <Maximum SDU size>,
+					  <SDU error ratio>,
+					  <Residual bit error ratio>,
+					  <Delivery of erroneous SDUs>,
+					  <Transfer delay>,
+					  <Traffic handlingpriority>
+
+AT+CGEQREQ=?: <PDP_type>,
+			  (list of supported <Traffic class>s),
+			  (list ofsupported <Maximum bitrate UL>s),
+			  (list of supported <Maximum bitrate DL>s),
+			  (list ofsupported <Guaranteed bitrate UL>s),
+			  (list of supported <Guaranteed bitrate DL>s),
+			  (list ofsupported <Delivery order>s),
+			  (list of supported <Maximum SDU size>s),
+			  (list of supported<SDU error ratio>s),
+			  (list of supported <Residual bit error ratio>s),
+			  (list of supported<Delivery of erroneous SDUs>s),
+			  (list of supported <Transfer delay>s),
+			  (list of supported<Traffic handling priority>s)
+
+	<Traffic class>: specifies application type of the UMTS bearer service.
+		0 Conversational
+		1 Streaming
+		2 Interactive
+		3 Background
+		4 Subscribed
+		
+	<Delivery order>: a numeric parameter that indicates whether the UMTS bearer shall provide in-sequence SDU delivery or not.
+		0 No
+		1 Yes
+		2 Subscribed value
+		
+	<Delivery of erroneous SDUs>: indicates whether SDUs detected as erroneous shall be delivered or not.
+		0 No
+		1 Yes
+		2 No detect
+		3 Subscribed value
+		
+6. AT+CFUN?
+	<fun>:
+		0 Minimum functionality (disable RF but reserve SIM card power supply, previous mode must not be offline).
+		1 Set as online mode (previous mode must not be offline). (default value)
+		4 Set as offline mode (previous mode must not be FTM).
+		5 Set as FTM mode (previous mode must be online).
+		6 Restart MT (previous mode must be offline).
+		7 Disable RF (previous mode must not be offline).
+	<rst>: whether to restart MT before setting
+		0 Do not restart MT before setting. (default value)
+		1 Restart the MT before setting (<fun> is set to 1).
 	
 
 <---- QUESTION ---->
