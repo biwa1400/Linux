@@ -16,6 +16,9 @@ OpenCelliD API is: "9732db58d53378"
 5. get DHCP ip
 	udhcpc -BFs -i eth1
 
+6. add route
+	route add default gw 192.168.8.1
+
 <---- debug mode ---->
 1. create file sw_debug_mode.xml
 
